@@ -1,0 +1,70 @@
+//Практическая 1
+fun main() {
+    val numbers = listOf(8, 5) // Произвольные числа
+
+    val min = numbers.minOrNull() ?: 0
+    val max = numbers.maxOrNull() ?: 0
+
+    println("Введенные числа: ${numbers[0]} и ${numbers[1]}")
+    println("Минимальное: $min, Максимальное: $max")
+
+    val rangeList = mutableListOf<Int>()
+    for (i in min..max) {
+        rangeList.add(i) // Явно заполняем список
+    }
+
+    println("Список диапазона: ${rangeList.joinToString(", ")}")
+}
+
+
+
+//Практическая 2
+fun main() {
+    val numbers = mutableListOf<Int>()
+
+    numbers.addAll(listOf(8, 21, 5, 90, 11, 0))
+    numbers.add(0, 90)
+    numbers.removeAt(4)
+    numbers.add(-35)
+
+    println("Массив: ${numbers.joinToString(", ")}")
+}
+
+//Практическая 3
+fun main() {
+    val numbers = arrayOf(24, -63, 67, -12, 88, 94, -28, 82, 0, 53)
+
+   
+    val min = numbers.minOrNull() ?: throw NoSuchElementException("Массив пуст")
+    val max = numbers.maxOrNull() ?: throw NoSuchElementException("Массив пуст")
+
+    println("Массив: ${numbers.joinToString(", ")}")
+    println("Минимум: $min, Максимум: $max")
+
+//Практическая 4
+fun main() {
+    val numbers = listOf(5, 2, 8, 1, 9, 4)
+
+    val sortedNumbers = numbers.sorted()
+    val secondSmallest = sortedNumbers.getOrNull(1)
+
+    println("Второй самый маленький элемент: $secondSmallest")
+}
+
+//Практическая 5
+fun main() {
+    val numbers = arrayOf(24, -63, 67, -12, 88, 94, -28, 82, 0, 53)
+    numbers.sort()
+    println("Отсортированный массив: ${numbers.joinToString(", ")}")
+}
+
+//Практическая 6
+fun main() {
+    val numbers = arrayOf(5, 8, 18, 34, 3, 56, 43, 27, 4, 23)
+
+    val average = numbers.average()
+    val aboveAverage = numbers.filter { it > average }
+
+    println("Среднее: $average")
+    println("Элементы выше среднего: ${aboveAverage.joinToString()}")
+}
